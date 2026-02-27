@@ -192,12 +192,13 @@ section {
 
 /* ============ COUNTDOWN ============ */
 .countdown {
-    min-height: 100vh;
+    min-height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #0a1425;
+    /* background: #0a1425; */
+    background: #0d1a30;
     padding: 50px 20px;
     position: relative;
 }
@@ -443,7 +444,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #0d1a30;
+    background: linear-gradient(to bottom, #0a1425 0%, #0d1a30 300px);
     padding: 50px 20px;
     position: relative;
 }
