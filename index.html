@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omar - Mis 18</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <!-- Audio -->
+    <audio id="audio" src="audio/audio.mp3" loop></audio>
+
+    <!-- Botón música -->
+    <button id="btn-musica" class="btn-musica" onclick="toggleMusica()">
+        <i class="fas fa-play"></i>
+    </button>
+
+    <!-- Hero -->
+    <section id="hero" class="hero">
+        <div class="hero-lines"></div>
+        
+        <div class="hero-content">
+            <p class="hero-date">24 DE MAYO DE 2026</p>
+            <p class="hero-subtitle">Mis 18 Años</p>
+            <h1 class="hero-title">Omar</h1>
+            <p class="hero-number">18</p>
+            <p class="hero-name">SÁNCHEZ</p>
+            <a href="#fotos" class="hero-btn" onclick="iniciarMusica(); document.getElementById('fotos').scrollIntoView({behavior: 'smooth'}); return false;">Descubrir</a>
+        </div>
+    </section>
+
+    <!-- Countdown -->
+    <section id="countdown" class="countdown" data-fecha="2026-05-24" data-hora="22:00">
+        <h2 class="countdown-title">La cuenta regresiva</h2>
+        <div class="countdown-timer">
+            <div class="count-block">
+                <div class="count-box">
+                    <span class="count-number" id="days">00</span>
+                </div>
+                <span class="count-label">Días</span>
+            </div>
+            <div class="count-block">
+                <div class="count-box">
+                    <span class="count-number" id="hours">00</span>
+                </div>
+                <span class="count-label">Horas</span>
+            </div>
+            <div class="count-block">
+                <div class="count-box">
+                    <span class="count-number" id="minutes">00</span>
+                </div>
+                <span class="count-label">Min</span>
+            </div>
+            <div class="count-block">
+                <div class="count-box">
+                    <span class="count-number" id="seconds">00</span>
+                </div>
+                <span class="count-label">Seg</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Padres -->
+    <section id="padres" class="padres">
+        <div class="padres-container">
+            <p class="padres-text">Con la bendicíon de</p>
+            <p class="padres-names">Roberto Sánchez <span>&</span> Laura Gutiérrez</p>
+        </div>
+    </section>
+
+    <!-- Fotos Slider -->
+    <section id="fotos" class="fotos">
+        <h2 class="fotos-title">El cumpleañero</h2>
+        <div class="slider-container">
+            <div class="slider-wrapper" id="sliderWrapper">
+                <div class="slider-slide">
+                    <img src="img/boy1.jpg" alt="Omar">
+                    <div class="slider-overlay">
+                        <p class="slider-name">OMAR SÁNCHEZ</p>
+                        <p class="slider-subtitle">18 años</p>
+                    </div>
+                </div>
+                <div class="slider-slide">
+                    <img src="img/boy2.jpg" alt="Omar">
+                    <div class="slider-overlay">
+                        <p class="slider-name">OMAR SÁNCHEZ</p>
+                        <p class="slider-subtitle">Sus momentos</p>
+                    </div>
+                </div>
+                <div class="slider-slide">
+                    <img src="img/boy3.jpg" alt="Omar">
+                    <div class="slider-overlay">
+                        <p class="slider-name">OMAR SÁNCHEZ</p>
+                        <p class="slider-subtitle">Lista para celebrate</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-nav">
+            <div class="slider-dot active" onclick="goToSlide(0)"></div>
+            <div class="slider-dot" onclick="goToSlide(1)"></div>
+            <div class="slider-dot" onclick="goToSlide(2)"></div>
+        </div>
+    </section>
+
+    <!-- Fecha -->
+    <section id="fecha" class="fecha">
+        <div class="fecha-container">
+            <div class="fecha-icon">📅</div>
+            <p class="fecha-title">Cuando</p>
+            <p class="fecha-text">24 de Mayo</p>
+            <p class="fecha-detail">A las 22:00 horas</p>
+        </div>
+    </section>
+
+    <!-- Frase -->
+    <section id="frase" class="frase">
+        <div class="frase-container">
+            <p class="frase-text">"Un nuevo capítulo comienza. 18 años listos para escribir mi propia historia."</p>
+            <p class="frase-autor">— Omar</p>
+        </div>
+    </section>
+
+    <!-- Ubicación -->
+    <section id="ubicacion" class="ubicacion">
+        <div class="ubicacion-container">
+            <div class="ubicacion-icon">📍</div>
+            <p class="ubicacion-titulo">Donde</p>
+            <p class="ubicacion-lugar">Salón Sky</p>
+            <p class="ubicacion-detalle">Av. del Puerto 456, Ciudad</p>
+            <a href="#" class="ubicacion-btn" onclick="return false;">Ver en Mapa</a>
+        </div>
+    </section>
+
+    <!-- Dress Code -->
+    <section id="dresscode" class="dresscode">
+        <div class="dresscode-container">
+            <h2 class="dresscode-title">Dress Code</h2>
+            <p class="dresscode-text">Elegante - Formal</p>
+            <div class="dresscode-colors">
+                <div class="color-swatch navy"></div>
+                <div class="color-swatch silver"></div>
+                <div class="color-swatch white"></div>
+                <div class="color-swatch black"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Itinerario -->
+    <section id="itinerario" class="itinerario">
+        <div class="itinerario-container">
+            <h2 class="itinerario-title">Itinerario</h2>
+            <div class="itinerario-item">
+                <div class="itinerario-icon">🥂</div>
+                <div class="itinerario-content">
+                    <p class="itinerario-hora">22:00 HS</p>
+                    <p class="itinerario-actividad">Recepción</p>
+                    <p class="itinerario-detalle">Bienvenida a los invitados</p>
+                </div>
+            </div>
+            <div class="itinerario-item">
+                <div class="itinerario-icon">🎤</div>
+                <div class="itinerario-content">
+                    <p class="itinerario-hora">22:30 HS</p>
+                    <p class="itinerario-actividad">Inicio de la Fiesta</p>
+                    <p class="itinerario-detalle">Bienvenida y brindis</p>
+                </div>
+            </div>
+            <div class="itinerario-item">
+                <div class="itinerario-icon">🎂</div>
+                <div class="itinerario-content">
+                    <p class="itinerario-hora">00:00 HS</p>
+                    <p class="itinerario-actividad">Corte de Torta</p>
+                    <p class="itinerario-detalle">El momento más esperado</p>
+                </div>
+            </div>
+            <div class="itinerario-item">
+                <div class="itinerario-icon">🎊</div>
+                <div class="itinerario-content">
+                    <p class="itinerario-hora">02:00 HS</p>
+                    <p class="itinerario-actividad">Cierre</p>
+                    <p class="itinerario-detalle">Fin de la celebración</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regalos -->
+    <section id="regalos" class="regalos">
+        <div class="regalos-container">
+            <div class="regalos-icon">🎁</div>
+            <h2 class="regalos-titulo">Regalos</h2>
+            <p class="regalos-texto">Tu presencia es el mejor regalo. Si deseas hacerme un presente, puedes hacerlo en efectivo o transferir a la cuenta que te proporcionaré al confirmar.</p>
+            <button class="regalos-btn" onclick="openModal()">Ver Datos Bancarios</button>
+        </div>
+    </section>
+
+    <!-- Instagram -->
+    <section id="instagram" class="instagram">
+        <div class="instagram-container">
+            <div class="instagram-icon">📸</div>
+            <h2 class="instagram-titulo">Comparte tus fotos</h2>
+            <p class="instagram-texto">Etiquetame en tus fotos de la fiesta para que pueda revivir cada momento especial.</p>
+            <p class="instagram-usuario">@omar_sanchez</p>
+            <p class="instagram-hashtag-titulo">Usa el hashtag</p>
+            <p class="instagram-hashtag">#Mis18Omar</p>
+        </div>
+    </section>
+
+    <!-- Especial -->
+    <section id="especial" class="especial">
+        <div class="especial-container">
+            <div class="especial-icon">🎉</div>
+            <p class="especial-texto">Celebra</p>
+            <p class="especial-texto">La Vida</p>
+        </div>
+    </section>
+
+    <!-- Confirmar -->
+    <section id="confirmar" class="confirmar">
+        <div class="confirmar-container">
+            <div class="confirmar-icon">💬</div>
+            <h2 class="confirmar-titulo">Confirmar Asistencia</h2>
+            <p class="confirmar-fecha">Confirma antes del 10 de Mayo</p>
+            <a href="#" class="confirmar-btn" onclick="alert('WhatsApp no configurado para demo'); return false;">Confirmar por WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section id="footer" class="footer">
+        <div class="footer-container">
+            <div class="footer-icon">🎊</div>
+            <p class="footer-invitacion">Invitación</p>
+            <p class="footer-de">de</p>
+            <p class="footer-nombre">OMAR</p>
+            <p class="footer-texto">TE ESPERO</p>
+            <p class="footer-hashtag">#Mis18Omar</p>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="modal" class="modal" onclick="closeModal(event)">
+        <div class="modal-content">
+            <h3 class="modal-titulo">Datos de la Cuenta</h3>
+            <div class="modal-datos">
+                <p class="modal-banco">Banco Ciudad</p>
+                <p class="modal-alias">OMAR.18</p>
+                <p class="modal-titular">Titular: Omar Sánchez</p>
+            </div>
+            <button class="modal-cerrar" onclick="closeModal()">Cerrar</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
